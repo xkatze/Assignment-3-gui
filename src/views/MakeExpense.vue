@@ -41,9 +41,9 @@ export default {
     },
     methods: {
         async postExpense(){
-            var modelIdnum = parseInt(localStorage.getItem("modelID"));
-            var jobIdnum = parseInt(this.jobID);
-            var amountnum = parseInt(this.expense);
+            var modelIdnum = parseFloat(localStorage.getItem("modelID"));
+            var jobIdnum = parseFloat(this.jobID);
+            var amountnum = parseFloat(this.expense);
             var ExpenseForm = { "modelId": modelIdnum, "jobId": jobIdnum
             , "date": this.year + "-" + this.month + "-" + this.day
             , "text": this.comment
