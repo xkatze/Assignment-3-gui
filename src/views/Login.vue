@@ -11,17 +11,20 @@
     </form>
     <p>{{msg}}</p>
     <p>{{msg2}}</p>
+    <p>{{msg3}}</p>
   </div>
 </template>
 
 <script>
+import VueJwtDecode from "vue-jwt-decode";
     export default{
         data: function(){
             return{
                 email: "",
                 password: "",
                 msg: "hello",
-                msg2: ""
+                msg2: "",
+                msg3: ""
             }
         },
         methods: {
@@ -39,7 +42,12 @@
             if (response.ok) {
             let token = await response.json();
             localStorage.setItem("token", token.jwt);
+            var obj = VueJwtDecode.decode(token.jwt);
+            this.msg2 = obj["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]
+            localStorage.setItem("isManager", obj["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"])
             this.msg = token.jwt
+            this.msg3 = localStorage.getItem("token");
+            this.$router.push("/hello");
             // Change view to some other component
             // …
             } else {

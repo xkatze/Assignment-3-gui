@@ -23,7 +23,13 @@ const routes = [
     path: "/hello",
     name: "Hello",
     component: () =>
-    import("../views/Hello.vue")
+    import("../views/Hello.vue"),
+    beforeEnter: (to, from, next) => {
+      let role = localStorage.getItem("isManager");
+      if(role){
+      next();
+      }else next('/login')
+    }
   },
   {
     path: "/login",
@@ -34,6 +40,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  //mode: "history",
   routes
 });
 
