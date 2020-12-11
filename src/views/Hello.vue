@@ -1,7 +1,4 @@
-
-
 <template>
-
     <div class="app">
         <div>
             <table id="Thejobs">
@@ -19,24 +16,9 @@
                     <td>{{item.location}}</td>
                     <td>{{item.comments}}</td>
                 </tr>
-
-
-    </table>
+            </table>
                 <h1>{{Jobsa.days}}</h1>
-
-
-
-
-</div>
-    
-
-
-
-
-
-        
-
-
+        </div>
     </div>
 </template>
 
@@ -66,7 +48,13 @@
             });
 
             if (response.ok) {
-                let Jobs = await response.json();                var Jobstring = JSON.stringify(Jobs);                console.log(Jobstring);                this.Jobsa = Jobs;            }        }    }
+                let Jobs = await response.json();
+                var Jobstring = JSON.stringify(Jobs);
+                console.log(Jobstring);
+                this.Jobsa = Jobs;
+            }
+        }
+    }
 
     </script>
 
