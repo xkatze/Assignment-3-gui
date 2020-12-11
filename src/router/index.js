@@ -36,6 +36,13 @@ const routes = [
     name: "Login",
     component: () =>
     import("../views/Login")
+  },
+  {
+    path: "/createManager",
+    name: "Managing",
+    component: () =>
+    import("../views/CreateManager")
+
   }
 ];
 
