@@ -10,7 +10,6 @@
         <button v-on:click="loginbutton" type="submit">Login</button>
     </form>
     <p>{{msg}}</p>
-    <p>{{msg2}}</p>
   </div>
 </template>
 
@@ -20,8 +19,7 @@
             return{
                 email: "",
                 password: "",
-                msg: "hello",
-                msg2: ""
+                msg: "hello"
             }
         },
         methods: {
@@ -42,6 +40,7 @@
             this.msg = token.jwt
             // Change view to some other component
             // …
+            
             } else {
                 alert("Server returned: " + response.statusText);
                 this.msg = response.statusText;
