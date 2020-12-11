@@ -3,10 +3,38 @@
 <template>
 
     <div class="app">
+        <div>
+            <table id="Thejobs">
+                <tr>
+                    <th> Customer</th>
+                    <th>Start Date</th>
+                    <th>Days</th>
+                    <th>Location</th>
+                    <th>Comment</th>
+                </tr>
+                <tr v-for="item in Jobsa" v-bind:key="item.id">
+                    <td>{{item.customer}}</td>
+                    <td>{{item.startDate}}</td>
+                    <td>{{item.days}}</td>
+                    <td>{{item.location}}</td>
+                    <td>{{item.comments}}</td>
+                </tr>
 
-        <h1>hey</h1>
 
-        <h2>{{}}</h2>
+    </table>
+                <h1>{{Jobsa.days}}</h1>
+
+
+
+
+</div>
+    
+
+
+
+
+
+        
 
 
     </div>
@@ -18,6 +46,7 @@
     export default {
         data: function () {
             return {
+                Jobsa: []
 
             }
         },
@@ -37,7 +66,41 @@
             });
 
             if (response.ok) {
-
-                let Jobs = await response.json();                var Jobstring = JSON.stringify(Jobs);                console.warn(Jobstring);            }        }    }
+                let Jobs = await response.json();                var Jobstring = JSON.stringify(Jobs);                console.log(Jobstring);                this.Jobsa = Jobs;            }        }    }
 
     </script>
+
+<style>
+
+    #Thejobs {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 70%;
+        align-self:center;
+    }
+
+        #Thejobs td, #Thejobs th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #Thejobs tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #Thejobs tr:hover {
+            background-color: #ddd;
+        }
+
+        #Thejobs th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+</style>
