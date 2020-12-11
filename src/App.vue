@@ -5,6 +5,8 @@
       <router-link to="/about">| About </router-link>
       <router-link to="/hello">| Hello World </router-link>
       <router-link to="/login" v-if="canSee()">| Login </router-link>
+      <router-link to="/createManager" v-if="managerOnly()">| Create new Manager </router-link> 
+      <router-link to="/makeExpense" v-if="modelOnly()">| Make Expense </router-link>
       <button v-if="loggedin()" v-on:click="logout">Logout</button>
     </div>
     <router-view />
@@ -30,9 +32,26 @@ export default {
         return false;
       }
     },
+    managerOnly(){
+      if(localStorage.getItem("isManager") == "Manager"){
+        return true;
+      }
+      else{
+        return false;
+      }
+    },
+    modelOnly(){
+      if(localStorage.getItem("isManager") == "Model"){
+        return true;
+      }
+      else{
+        return false;
+      }
+    },
     logout(){
         localStorage.removeItem("isManager");
         localStorage.removeItem("token");
+        localStorage.removeItem("modelID");
         location.reload();
       }
   }
