@@ -50,6 +50,7 @@ import VueJwtDecode from "vue-jwt-decode";
             this.$router.push("/hello");
             // Change view to some other component
             // …
+
             } else {
                 alert("Server returned: " + response.statusText);
                 this.msg = response.statusText;
@@ -60,7 +61,7 @@ import VueJwtDecode from "vue-jwt-decode";
                 }
             return;
         }
-        
+
         /*methods: {
             post: function(){
                 this.$http.post("https://localhost:44368/api/Account/login",{
