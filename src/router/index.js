@@ -35,14 +35,38 @@ const routes = [
     path: "/login",
     name: "Login",
     component: () =>
-    import("../views/Login")
+    import("../views/Login.vue"),
+    beforeEnter: (to, from, next) => {
+      if(localStorage.getItem("isManager") == null){
+        next();
+      }else{
+        next('/')
+      } 
+    }
   },
   {
     path: "/createManager",
     name: "Managing",
     component: () =>
-    import("../views/CreateManager")
-
+    import("../views/CreateManager.vue"),
+    beforeEnter: (to, from, next) => {
+      let role = localStorage.getItem("isManager");
+      if(role == "Manager"){
+      next();
+      }else next('/login')
+    }
+  },
+  {
+    path: "/makeExpense",
+    name: "MakeExpense",
+    component: () =>
+    import("../views/MakeExpense.vue"),
+    beforeEnter: (to, from, next) => {
+      let role = localStorage.getItem("isManager");
+      if(role == "Model"){
+      next();
+      }else next('/login')  
+    }
   }
 ];
 

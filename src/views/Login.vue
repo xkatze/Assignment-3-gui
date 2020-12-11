@@ -45,6 +45,7 @@ import VueJwtDecode from "vue-jwt-decode";
             var obj = VueJwtDecode.decode(token.jwt);
             this.msg2 = obj["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]
             localStorage.setItem("isManager", obj["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"])
+            localStorage.setItem("modelID", obj["ModelId"])
             this.msg = token.jwt
             this.msg3 = localStorage.getItem("token");
             this.$router.push("/hello");
