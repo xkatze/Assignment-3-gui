@@ -1,7 +1,7 @@
 
 
 <template>
-    
+
     <div class="app">
 
         <h1>hey</h1>
@@ -14,7 +14,7 @@
 
 <script>
 
-    
+
     export default {
         data: function () {
             return {
