@@ -53,16 +53,6 @@
                 console.log(Jobstring);
                 this.Jobsa = Jobs;
             }
-            /*let url2 = 
-            let response = await fetch(url2, {
-                method: 'GET', // Or DELETE
-                credentials: 'include',
-                headers: {
-                    'Authorization': 'Bearer ' + localStorage.getItem("token"),
-                    'Content-Type': 'application/json'
-                }
-
-            });*/
         }
     }
 
