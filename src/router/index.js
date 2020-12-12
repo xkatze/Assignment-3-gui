@@ -16,12 +16,12 @@ const routes = [
         name: "CreateModel",
         component: () =>
             import("../views/CreateModel.vue"),
-        //beforeEnter: (to, from, next) => {
-        //    let role = localStorage.getItem("isManager");
-        //    if (role == "Model") {
-        //        next();
-        //    } else next('/login')
-        //}
+        beforeEnter: (to, from, next) => {
+            let role = localStorage.getItem("isManager");
+            if (role == "Manager") {
+                next();
+            } else next('/login')
+        }
     },
 
     {
@@ -29,12 +29,12 @@ const routes = [
         name: "CreateJob",
         component: () =>
             import("../views/CreateJob.vue"),
-        //beforeEnter: (to, from, next) => {
-        //    let role = localStorage.getItem("isManager");
-        //    if (role == "Model") {
-        //        next();
-        //    } else next('/login')
-        //}
+        beforeEnter: (to, from, next) => {
+            let role = localStorage.getItem("isManager");
+            if (role == "Manager") {
+                next();
+            } else next('/login')
+        }
     },
 
   {
