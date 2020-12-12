@@ -58,11 +58,12 @@ export default {
     methods: {
         async createJob() {
 
+            var Days = parseFloat(this.days);
             var JobForm = {
 
                 "customer": this.customer,
                 "startDate": this.year + "-" + this.month + "-" + this.day,
-                "days": this.Days,
+                "days": Days,
                 "location": this.location,
                 "comments": this.comments
             
