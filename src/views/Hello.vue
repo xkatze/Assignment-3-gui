@@ -8,6 +8,8 @@
                     <th>Days</th>
                     <th>Location</th>
                     <th>Comment</th>
+                    <th>Model</th>
+                    <th>Expenses</th>
                 </tr>
                 <tr v-for="item in Jobsa" v-bind:key="item.id">
                     <td>{{item.customer}}</td>
@@ -15,6 +17,8 @@
                     <td>{{item.days}}</td>
                     <td>{{item.location}}</td>
                     <td>{{item.comments}}</td>
+                    <td>{{item.efModelId}}</td>
+                    <td>{{item.expenses}}</td>
                 </tr>
             </table>
                 <h1>{{Jobsa.days}}</h1>
@@ -63,7 +67,7 @@
     #Thejobs {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
-        width: 70%;
+        width: 100%;
         align-self:center;
     }
 
