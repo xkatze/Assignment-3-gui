@@ -2,9 +2,9 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home </router-link>
-      <router-link to="/createModel">| Create Model </router-link>
-      <router-link to="/createJob">| Create Job </router-link>
-      <router-link to="/showJob">| Show Jobs </router-link>
+      <router-link to="/createModel" v-if="managerOnly()">| Create Model </router-link>
+      <router-link to="/createJob" v-if="managerOnly()">| Create Job </router-link>
+      <router-link to="/showJob" v-if="loggedin()">| Show Jobs </router-link>
       <router-link to="/login" v-if="canSee()">| Login </router-link>
       <router-link to="/createManager" v-if="managerOnly()">| Create new Manager </router-link>
       <router-link to="/makeExpense" v-if="modelOnly()">| Make Expense </router-link>
