@@ -3,13 +3,11 @@
         <div>
             <table id="Thejobs">
                 <tr>
-                    <th> Customer</th>
+                    <th>Customer</th>
                     <th>Start Date</th>
                     <th>Days</th>
                     <th>Location</th>
                     <th>Comment</th>
-                    <th>Model</th>
-                    <th>Expenses</th>
                 </tr>
                 <tr v-for="item in Jobsa" v-bind:key="item.id">
                     <td>{{item.customer}}</td>
@@ -17,8 +15,6 @@
                     <td>{{item.days}}</td>
                     <td>{{item.location}}</td>
                     <td>{{item.comments}}</td>
-                    <td>{{item.efModelId}}</td>
-                    <td>{{item.expenses}}</td>
                 </tr>
             </table>
                 <h1>{{Jobsa.days}}</h1>
@@ -57,6 +53,16 @@
                 console.log(Jobstring);
                 this.Jobsa = Jobs;
             }
+            /*let url2 = 
+            let response = await fetch(url2, {
+                method: 'GET', // Or DELETE
+                credentials: 'include',
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem("token"),
+                    'Content-Type': 'application/json'
+                }
+
+            });*/
         }
     }
 
