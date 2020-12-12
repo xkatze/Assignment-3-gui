@@ -7,6 +7,7 @@
       <router-link to="/login" v-if="canSee()">| Login </router-link>
       <router-link to="/createManager" v-if="managerOnly()">| Create new Manager </router-link> 
       <router-link to="/makeExpense" v-if="modelOnly()">| Make Expense </router-link>
+      <router-link to="/modelToJob" v-if="managerOnly()">| Add/Delete Model To Job </router-link>
       <button v-if="loggedin()" v-on:click="logout">Logout</button>
     </div>
     <router-view />

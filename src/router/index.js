@@ -20,10 +20,10 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
-    path: "/hello",
-    name: "Hello",
+    path: "/showJob",
+    name: "ShowJobs",
     component: () =>
-    import("../views/Hello.vue"),
+    import("../views/ShowJobs.vue"),
     beforeEnter: (to, from, next) => {
       let role = localStorage.getItem("isManager");
       if(role){
@@ -67,11 +67,22 @@ const routes = [
       next();
       }else next('/login')  
     }
+  },
+  {
+    path: "/modelToJob",
+    name: "ModelToJob",
+    component: () =>
+    import("../views/ModelToJob.vue"),
+    beforeEnter: (to, from, next) => {
+      let role = localStorage.getItem("isManager");
+      if(role == "Manager"){
+      next();
+      }else next('/login')  
+    }
   }
 ];
 
 const router = new VueRouter({
-  //mode: "history",
   routes
 });
 
