@@ -60,7 +60,7 @@ export default {
 
             var JobForm = {
 
-                "costumer": this.costumer,
+                "customer": this.customer,
                 "startDate": this.year + "-" + this.month + "-" + this.day,
                 "days": this.Days,
                 "location": this.location,
