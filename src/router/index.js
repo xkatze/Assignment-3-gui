@@ -58,7 +58,7 @@ const routes = [
       if(localStorage.getItem("isManager") == null){
         next();
       }else{
-        next('/')
+        next('/showJob')
       } 
     }
   },

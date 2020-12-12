@@ -49,7 +49,7 @@ import VueJwtDecode from "vue-jwt-decode";
             localStorage.setItem("modelID", obj["ModelId"])
             this.msg = token.jwt
             this.msg3 = localStorage.getItem("token");
-            this.$router.push("/hello");
+            location.reload();
             // Change view to some other component
             // …
 
