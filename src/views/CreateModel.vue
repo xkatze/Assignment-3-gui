@@ -78,7 +78,7 @@
             <input required v-model="comments" id="Comments" type="text" />
             <br>
             <br />
-            <label for="Password">EyeColor</label>
+            <label for="Password">Password</label>
             <input required v-model="password" id="Password" type="text" />
             <br>
             <br />
@@ -120,20 +120,28 @@ export default {
         async createModel() {
             //var Height = parseFloat(this.height);
             //var Shoesize = parseInt(this.Shoesize);
-            var Shoesize= parseInt(this.Shoesize);
-            var Height = parseInt(this.height);
+            var ShoesizeOf = parseFloat(this.shoeSize);
+            var HeightOf = parseFloat(this.height);
 
             var ModelForm = {
 
-                "firstName": this.firstName, "lastName": this.lastName,
-                "email": this.email, "phoneNo": this.phoneNo,
-                "addresLine1": this.addresLine1, "addresLine2": this.addresLine2,
-                "zip": this.zip, "city": this.city,
+                "firstName": this.firstName,
+                "lastName": this.lastName,
+                "email": this.email,
+                "phoneNo": this.phoneNo,
+                "addresLine1": this.addresLine1,
+                "addresLine2": this.addresLine2,
+                "zip": this.zip,
+                "city": this.city,
                 "country": this.country, 
                 "birthDate": this.year + "-" + this.month + "-" + this.day,
-                "nationality": this.nationality, "height": Height,
-                "shoeSize": Shoesize, "hairColor": this.hairColor,
-                "eyeColor": this.eyeColor, "comments": this.comments, "password": this.password
+                "nationality": this.nationality,
+                "height": HeightOf,
+                "shoeSize": ShoesizeOf,
+                "hairColor": this.hairColor,
+                "eyeColor": this.eyeColor,
+                "comments": this.comments,
+                "password": this.password
             };
             let url = "https://localhost:44368/api/Models";
             try
@@ -142,7 +150,8 @@ export default {
             method: "POST",
                 body: JSON.stringify(ModelForm), // Assumes data is in an object called form
             headers: new Headers({
-                
+
+                'Authorization': 'Bearer ' + localStorage.getItem("token"),
                 "Content-Type": "application/json"
                 })
             });
@@ -152,9 +161,7 @@ export default {
             }
             else{
                 alert("unsuccesful server returned " + response.statusText);
-                let Jobs = await response.json();
-                var Jobstring = JSON.stringify(Jobs);
-                console.log(Jobstring);
+                console.warn(JSON.stringify(ModelForm))
             }
             }
             catch(error)
