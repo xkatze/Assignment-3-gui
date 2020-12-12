@@ -4,35 +4,35 @@
         <form class="CreateJob" id="HobID">
 
 
-            <label for="Fname">First Name</label>
-            <input required v-model="firstName" id="Fname" type="text" />
+            <label for="Customer">Costumer</label>
+            <input required v-model="customer" id="Customer" type="text" />
             <br>
             <br />
-            <label for="Lname">Last Name</label>
-            <input required v-model="lastName" id="Lname" type="text" />
+            <label for="yearstart">Year of start</label>
+            <input required v-model="year" id="yearstart" type="text" />
             <br>
             <br />
-            <label for="Mail">Email</label>
-            <input required v-model="email" id="Mail" type="text" />
+            <label for="monthstart">Start month</label>
+            <input required v-model="month" id="monthstart" type="text" />
             <br>
             <br />
-            <label for="PhoneNo">phoneNo</label>
-            <input required v-model="phoneNo" id="PhoneNo" type="text" />
-            <br>
-            <br />
-
-            <label for="Addr1">Adresse 1</label>
-            <input required v-model="addresLine1" id="Addr1" type="text" />
+            <label for="daystart">Start day</label>
+            <input required v-model="day" id="daystart" type="text" />
             <br>
             <br />
 
-            <label for="Addr1">Adresse 1</label>
-            <input required v-model="addresLine1" id="Addr1" type="text" />
+            <label for="Amountofday">Amount of days </label>
+            <input required v-model="days" id="Amountofday" type="text" />
             <br>
             <br />
 
-            <label for="Addr1">Adresse 1</label>
-            <input required v-model="addresLine1" id="Addr1" type="text" />
+            <label for="locations">Location</label>
+            <input required v-model="location" id="locations" type="text" />
+            <br>
+            <br />
+
+            <label for="Comments">Comments</label>
+            <input required v-model="comments" id="Comments" type="text" />
 
             <button v-on:click="createJob" class="button" type="submit">Create</button>
         </form>
@@ -46,7 +46,9 @@ export default {
     data: function(){
         return {
             customer: "",
-            startDate: "",
+            year: "",
+            month: "",
+            day: "",
             days: "",
             location: "",
             comments: ""
@@ -54,40 +56,25 @@ export default {
     },
 
     methods: {
-        async createModel() {
-            //var Height = parseFloat(this.height);
-            //var Shoesize = parseInt(this.Shoesize);
-            var Shoesize= parseFloat(this.Shoesize);
-            var Height = parseInt(this.height);
+        async createJob() {
 
-            var ModelForm = {
+            var JobForm = {
 
-                "firstName": this.firstName,
-                "lastName": this.lastName,
-                "email": this.email,
-                "phoneNo": this.phoneNo,
-                "addresLine1": this.addresLine1,
-                "addresLine2": this.addresLine2,
-                "zip": this.zip,
-                "city": this.city,
-                "country": this.country,
-                "birthDate": this.year + "-" + this.month + "-" + this.day,
-                "nationality": this.nationality,
-                "height": Height,
-                "shoeSize": Shoesize,
-                "hairColor": this.hairColor,
-                "eyeColor": this.eyeColor,
-                "comments": this.comments,
-                "password": this.password
+                "costumer": this.costumer,
+                "startDate": this.year + "-" + this.month + "-" + this.day,
+                "days": this.Days,
+                "location": this.location,
+                "comments": this.comments
+            
             };
-            let url = "https://localhost:44368/api/Models";
+            let url = "https://localhost:44368/api/Jobs";
             try
             {
             let response = await fetch(url, {
             method: "POST",
-                body: JSON.stringify(ModelForm), // Assumes data is in an object called form
+                body: JSON.stringify(JobForm), // Assumes data is in an object called form
             headers: new Headers({
-
+                'Authorization': 'Bearer ' + localStorage.getItem("token"),
                 "Content-Type": "application/json"
                 })
             });
@@ -97,9 +84,7 @@ export default {
             }
             else{
                 alert("unsuccesful server returned " + response.statusText);
-                let Jobs = await response.json();
-                var Jobstring = JSON.stringify(Jobs);
-                console.log(Jobstring);
+                console.warn(JSON.stringify(JobForm))
             }
             }
             catch(error)

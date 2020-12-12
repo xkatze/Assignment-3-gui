@@ -24,6 +24,19 @@ const routes = [
         //}
     },
 
+    {
+        path: "/createJob",
+        name: "CreateJob",
+        component: () =>
+            import("../views/CreateJob.vue"),
+        //beforeEnter: (to, from, next) => {
+        //    let role = localStorage.getItem("isManager");
+        //    if (role == "Model") {
+        //        next();
+        //    } else next('/login')
+        //}
+    },
+
   {
     path: "/hello",
     name: "Hello",
