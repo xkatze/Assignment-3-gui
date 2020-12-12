@@ -1,39 +1,46 @@
 <template>
     <div class="about">
-        <h2>Her kan der oprettes et job</h2>
+        <h2>Create new job</h2>
         <form class="CreateJob" id="HobID">
 
 
             <label for="Customer">Costumer</label>
+            <br />
             <input required v-model="customer" id="Customer" type="text" />
-            <br>
+
             <br />
             <label for="yearstart">Year of start</label>
+            <br />
             <input required v-model="year" id="yearstart" type="text" />
-            <br>
+
             <br />
             <label for="monthstart">Start month</label>
+            <br />
             <input required v-model="month" id="monthstart" type="text" />
-            <br>
+
             <br />
             <label for="daystart">Start day</label>
+            <br />
             <input required v-model="day" id="daystart" type="text" />
-            <br>
+
             <br />
 
             <label for="Amountofday">Amount of days </label>
+            <br />
             <input required v-model="days" id="Amountofday" type="text" />
-            <br>
+
             <br />
 
             <label for="locations">Location</label>
+            <br />
             <input required v-model="location" id="locations" type="text" />
-            <br>
+
             <br />
 
             <label for="Comments">Comments</label>
+            <br />
             <input required v-model="comments" id="Comments" type="text" />
-
+            <br />
             <button v-on:click="createJob" class="button" type="submit">Create</button>
         </form>
     </div>

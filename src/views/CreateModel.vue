@@ -1,86 +1,105 @@
 <template>
     <div class="about">
-        <h2>Her kan der oprettes</h2>
+        <h2>Create new model</h2>
         <form class="CreateModel" id="ModelID">
 
 
             <label for="Fname">First Name</label>
+            <br />
             <input required v-model="firstName" id="Fname" type="text" />
-            <br>
+
             <br />
             <label for="Lname">Last Name</label>
+            <br />
             <input required v-model="lastName" id="Lname" type="text" />
-            <br>
+
             <br />
             <label for="Mail">Email</label>
+            <br />
             <input required v-model="email" id="Mail" type="text" />
-            <br>
+
             <br />
             <label for="PhoneNo">phoneNo</label>
+            <br />
             <input required v-model="phoneNo" id="PhoneNo" type="text" />
-            <br>
+
             <br />
 
             <label for="Addr1">Adresse 1</label>
+            <br />
             <input required v-model="addresLine1" id="Addr1" type="text" />
-            <br>
+
             <br />
             <label for="Addr1">Adresse 2</label>
+            <br />
             <input required v-model="addresLine2" id="Addr2" type="text" />
-            <br>
+
             <br />
             <label for="ZipNr">Zip Number</label>
+            <br />
             <input required v-model="zip" id="ZipNr" type="text" />
-            <br>
+
             <br />
             <label for="CityOfOccu">City</label>
+            <br />
             <input required v-model="city" id="CityOfOccu" type="text" />
-            <br>
+
             <br />
 
             <label for="CountryOccu">Country</label>
+            <br />
             <input required v-model="country" id="CountryOccu" type="text" />
-            <br>
+
             <br />
             <label for="Year">Year of birth</label>
+            <br />
             <input required v-model="year" id="Year" type="text" />
-            <br>
+
             <br />
             <label for="Month">Month of birth</label>
+            <br />
             <input required v-model="month" id="Month" type="text" />
-            <br>
+
             <br />
             <label for="Day">Day of birth</label>
+            <br />
             <input required v-model="day" id="Day" type="text" />
-            <br>
+
             <br />
             <label for="NationalityOf">Nationality</label>
+            <br />
             <input required v-model="nationality" id="NationalityOf" type="text" />
-            <br>
+
             <br />
             <label for="HeightOf">Height</label>
+            <br />
             <input required v-model="height" id="HeightOf" type="text" />
-            <br>
+
             <br />
             <label for="ShoeSizeM">ShoeSize</label>
+            <br />
             <input required v-model="shoeSize" id="ShoeSizeM" type="text" />
-            <br>
+
             <br />
             <label for="HairColorM">HairColor</label>
+            <br />
             <input required v-model="hairColor" id="HairColorM" type="text" />
-            <br>
+
             <br />
             <label for="EyeColorM">EyeColor</label>
+            <br />
             <input required v-model="eyeColor" id="EyeColorM" type="text" />
-            <br>
+
             <br />
             <label for="Comments">Comments</label>
+            <br />
             <input required v-model="comments" id="Comments" type="text" />
-            <br>
+
             <br />
             <label for="Password">Password</label>
+            <br />
             <input required v-model="password" id="Password" type="text" />
-            <br>
+
             <br />
 
             <button v-on:click="createModel" class="button" type="submit">Create</button>
@@ -183,7 +202,7 @@ export default {
         background-color: #4CAF50;
         border: none;
         color: white;
-        padding: 10px 10px;
+        padding: 10px 30px;
         text-align: center;
         text-decoration: none;
         display: inline-block;

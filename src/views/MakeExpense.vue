@@ -1,28 +1,35 @@
 <template>
+    
     <div class="makeExpense">
+        <h2>Add expenses</h2>
         <label>JobID</label>
-        <br/>
-        <input required v-model= "jobID" type="number"/>
-        <br/>
+        <br />
+        <input required v-model="jobID" type="number" />
+        <br />
         <label>Day</label>
-        <input required v-model= "day" type="text"/>
+        <br />
+        <input required v-model="day" type="text" />
+        <br />
         <label>Month</label>
-        <input required v-model= "month" type="text"/>
+        <br />
+        <input required v-model="month" type="text" />
+        <br />
         <label>Year</label>
-        <input required v-model= "year" type="text"/>
-        <br/>
+        <br />
+        <input required v-model="year" type="text" />
+        <br />
         <label>Comment</label>
-        <br/>
+        <br />
         <input type="text" required v-model="comment">
-        <br/>
+        <br />
         <label>Amount</label>
-        <br/>
-        <input type="number" required v-model= "expense">
-        <br/>
-        <button v-on:click="postExpense">submit</button>
-        <br/>
-        <br/>
-        <p>{{msg}}</p>
+        <br />
+        <input type="number" required v-model="expense">
+        <br />
+        <button v-on:click="postExpense" class="button">submit</button>
+        <br />
+        <br />
+
     </div>
 </template>
 
@@ -36,7 +43,7 @@ export default {
             year: "",
             comment: "",
             expense: "",
-            msg: "hello"
+
         }
     },
     methods: {
@@ -75,3 +82,41 @@ export default {
     }
 }
 </script>
+
+
+
+
+<style scoped>
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    input[type=number], select {
+        width: 25%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=text], select {
+        width: 25%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+</style>

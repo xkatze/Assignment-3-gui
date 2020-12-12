@@ -3,15 +3,16 @@
     <h1>Login In Page</h1>
     <form class="login" id="loginID">
         <label>email</label>
-        <input required v-model= "email" type="text"/>
-        <br/>
+        <br />
+        <input required v-model="email" type="text" />
+        <br />
         <label>password</label>
-        <input required v-model= "password" type="password"/>
-        <button v-on:click="loginbutton" type="submit">Login</button>
+        <br />
+        <input required v-model="password" type="password" />
+        <br />
+        <button v-on:click="loginbutton" class="button" type="submit">Login</button>
     </form>
-    <p>{{msg}}</p>
-    <p>{{msg2}}</p>
-    <p>{{msg3}}</p>
+
   </div>
 </template>
 
@@ -76,3 +77,20 @@ import VueJwtDecode from "vue-jwt-decode";
         }
     }
 </script>
+
+<style scoped>
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 2px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+
+</style>

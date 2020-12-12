@@ -1,5 +1,8 @@
 <template>
+
+    
     <div class="app">
+        <h2>Current jobs</h2>
         <div>
             <table id="Thejobs">
                 <tr>
@@ -17,7 +20,7 @@
                     <td>{{item.comments}}</td>
                 </tr>
             </table>
-                <h1>{{Jobsa.days}}</h1>
+            <h1>{{Jobsa.days}}</h1>
         </div>
     </div>
 </template>
